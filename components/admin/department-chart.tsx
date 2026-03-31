@@ -29,7 +29,7 @@ export function DepartmentChart() {
         <Card className="bg-white border-none shadow-sm h-full">
             <CardHeader className="flex flex-col gap-4 pb-0">
                 <div className="flex flex-row items-center justify-between w-full">
-                    <CardTitle className="text-base font-bold text-gray-800">Grafik Perdivisi</CardTitle>
+                    <CardTitle className="text-base font-bold text-gray-800">Grafik Akses Perdivisi</CardTitle>
 
                     {/* Date Filters Relocated from Page Bottom */}
                     <div className="flex items-center gap-3">

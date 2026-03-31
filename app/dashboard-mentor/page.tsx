@@ -44,12 +44,13 @@ function StatCard({
 
 function UpcomingClassCard() {
     return (
-        <Card className="shadow-sm border-none bg-white overflow-hidden">
-            <div className="bg-indigo-50/50 p-4 border-b border-indigo-100 flex items-center justify-between">
+        <Card className="shadow-sm border-none bg-white overflow-hidden h-full flex flex-col">
+            <div className="bg-indigo-50/50 p-4 border-b border-indigo-100 flex items-center justify-between shrink-0">
                 <h3 className="font-semibold text-lg text-gray-900">Upcoming Class</h3>
                 <Badge variant="outline" className="bg-white text-indigo-600 border-indigo-200">2 Sessions</Badge>
             </div>
-            <CardContent className="space-y-3 p-4">
+            <CardContent className="p-4 flex flex-col flex-1">
+                <div className="space-y-3 flex-1">
                 {[
                     { topic: "React Fundamentals", date: "Fri, 24 Jan", time: "09:00 - 11:30", batch: "MT-Batch IV" },
                     { topic: "State Management", date: "Mon, 27 Jan", time: "13:00 - 15:00", batch: "TDP Kaun" },
@@ -72,7 +73,8 @@ function UpcomingClassCard() {
                         </div>
                     </div>
                 ))}
-                <Button variant="ghost" className="w-full text-xs text-indigo-600 hover:bg-indigo-50 h-8 mt-1">
+                </div>
+                <Button variant="ghost" className="w-full text-xs text-indigo-600 hover:bg-indigo-50 h-8 mt-4 shrink-0">
                     View Full Schedule
                 </Button>
             </CardContent>
@@ -82,12 +84,13 @@ function UpcomingClassCard() {
 
 function MenteeListCard() {
     return (
-        <Card className="shadow-sm border-none bg-white overflow-hidden">
-            <div className="bg-indigo-50/50 p-4 border-b border-indigo-100 flex items-center justify-between">
+        <Card className="shadow-sm border-none bg-white overflow-hidden h-full flex flex-col">
+            <div className="bg-indigo-50/50 p-4 border-b border-indigo-100 flex items-center justify-between shrink-0">
                 <h3 className="font-semibold text-lg text-gray-900">List Mentee</h3>
                 <Button variant="link" className="text-xs text-blue-600 font-medium p-0 h-auto">View All</Button>
             </div>
-            <CardContent className="space-y-2 p-4">
+            <CardContent className="p-4 flex-1">
+                <div className="space-y-2">
                 {[
                     { name: "ABCDEF GHIJK LMNO", batch: "Batch I", role: "SDM", initials: "AG", color: "bg-blue-100 text-blue-600" },
                     { name: "EFGHI JKLMN OPQR", batch: "Batch II", role: "SDM", initials: "EJ", color: "bg-blue-100 text-blue-600" },
@@ -111,6 +114,44 @@ function MenteeListCard() {
                         <ChevronRight className="h-4 w-4 text-gray-300 group-hover:text-gray-400" />
                     </div>
                 ))}
+                </div>
+            </CardContent>
+        </Card>
+    )
+}
+
+function MenteeStatusCard() {
+    return (
+        <Card className="border-none shadow-sm bg-white overflow-hidden h-full flex flex-col">
+            <div className="bg-indigo-50/50 p-4 border-b border-indigo-100 flex items-center justify-between shrink-0">
+                <h3 className="font-semibold text-lg text-gray-900">Mentee Status</h3>
+            </div>
+            <CardContent className="p-4 flex-1">
+                <div className="flex flex-col items-center justify-center p-4 border border-gray-100 rounded-lg h-full bg-white">
+                    <div className="relative h-32 w-32">
+                        {/* Mock Donut Chart */}
+                        <svg viewBox="0 0 100 100" className="transform -rotate-90 w-full h-full">
+                            <circle cx="50" cy="50" r="40" stroke="#f3f4f6" strokeWidth="10" fill="transparent" />
+                            <circle cx="50" cy="50" r="40" stroke="#10B981" strokeWidth="10" fill="transparent" strokeDasharray="210 251.2" strokeDashoffset="0" strokeLinecap="round" />
+                        </svg>
+                        <div className="absolute inset-0 flex flex-col items-center justify-center">
+                            <span className="text-2xl font-bold text-gray-900">85%</span>
+                            <span className="text-[9px] text-gray-400 uppercase font-bold">Completion</span>
+                        </div>
+                    </div>
+                    <div className="mt-6 w-full flex items-center justify-center gap-4">
+                        <div className="flex items-center gap-2">
+                            <div className="h-2 w-2 rounded-full bg-[#10B981]"></div>
+                            <span className="text-xs font-bold text-gray-600">Completed</span>
+                            <span className="text-xs font-bold text-gray-900 ml-auto">85%</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <div className="h-2 w-2 rounded-full bg-gray-200"></div>
+                            <span className="text-xs font-bold text-gray-600">Pending</span>
+                            <span className="text-xs font-bold text-gray-900 ml-auto">15%</span>
+                        </div>
+                    </div>
+                </div>
             </CardContent>
         </Card>
     )
@@ -468,49 +509,18 @@ export default function MentorDashboardPage() {
 
             {/* Middle Section: Chart + Schedule + Mentee List */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                {/* Chart (33%) */}
-                <div>
-                    <Card className="border-none shadow-sm bg-white overflow-hidden">
-                        <div className="bg-indigo-50/50 p-4 border-b border-indigo-100 flex items-center justify-between">
-                            <h3 className="font-semibold text-lg text-gray-900">Mentee Status</h3>
-                        </div>
-                        <CardContent className="p-4">
-                            <div className="flex flex-col items-center justify-center p-4 border border-gray-100 rounded-lg h-full bg-white">
-                                <div className="relative h-32 w-32">
-                                    {/* Mock Donut Chart */}
-                                    <svg viewBox="0 0 100 100" className="transform -rotate-90 w-full h-full">
-                                        <circle cx="50" cy="50" r="40" stroke="#f3f4f6" strokeWidth="10" fill="transparent" />
-                                        <circle cx="50" cy="50" r="40" stroke="#10B981" strokeWidth="10" fill="transparent" strokeDasharray="210 251.2" strokeDashoffset="0" strokeLinecap="round" />
-                                    </svg>
-                                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                                        <span className="text-2xl font-bold text-gray-900">85%</span>
-                                        <span className="text-[9px] text-gray-400 uppercase font-bold">Completion</span>
-                                    </div>
-                                </div>
-                                <div className="mt-6 w-full flex items-center justify-center gap-4">
-                                    <div className="flex items-center gap-2">
-                                        <div className="h-2 w-2 rounded-full bg-[#10B981]"></div>
-                                        <span className="text-xs font-bold text-gray-600">Completed</span>
-                                        <span className="text-xs font-bold text-gray-900 ml-auto">85%</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <div className="h-2 w-2 rounded-full bg-gray-200"></div>
-                                        <span className="text-xs font-bold text-gray-600">Pending</span>
-                                        <span className="text-xs font-bold text-gray-900 ml-auto">15%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </CardContent>
-                    </Card>
+                {/* Mentee Status (33%) */}
+                <div className="h-full">
+                    <MenteeStatusCard />
                 </div>
 
                 {/* Upcoming Schedule (33%) */}
-                <div>
+                <div className="h-full">
                     <UpcomingClassCard />
                 </div>
 
                 {/* Mentee List (33%) */}
-                <div>
+                <div className="h-full">
                     <MenteeListCard />
                 </div>
             </div>

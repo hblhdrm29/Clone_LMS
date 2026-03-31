@@ -20,6 +20,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
+import { ClipboardList, ArrowRight } from "lucide-react"
 
 import cover1 from "../../../../public/assets/class-cover-1.png"
 
@@ -117,6 +118,7 @@ export default function ClassDetailPage() {
                     <TabsTrigger value="schedule" className="rounded-lg data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700">Schedule</TabsTrigger>
                     <TabsTrigger value="resources" className="rounded-lg data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700">Resources</TabsTrigger>
                     <TabsTrigger value="grades" className="rounded-lg data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700">Grades</TabsTrigger>
+                    <TabsTrigger value="evaluation" className="rounded-lg data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700">Evaluasi</TabsTrigger>
                 </TabsList>
 
                 {/* Mentees Tab Content */}
@@ -208,6 +210,52 @@ export default function ClassDetailPage() {
                             <p className="text-sm">This section will display appropriate schedule.</p>
                         </CardContent>
                     </Card>
+                </TabsContent>
+
+                {/* Evaluation Tab Content */}
+                <TabsContent value="evaluation" className="space-y-6">
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <div className="flex items-center justify-between mb-6">
+                            <div>
+                                <h3 className="text-lg font-bold text-gray-900">Evaluasi Pasca Pelatihan</h3>
+                                <p className="text-sm text-gray-500">Ukur perubahan perilaku mentee setelah mengikuti pelatihan.</p>
+                            </div>
+                            <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 border-none">Level 3</Badge>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <Link href="/dashboard-comentor/evaluasi-level-3" className="group p-4 rounded-xl border border-gray-100 hover:border-blue-200 hover:bg-blue-50 transition-all">
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-4">
+                                        <div className="h-12 w-12 rounded-lg bg-blue-100/50 flex items-center justify-center text-blue-600 group-hover:bg-blue-100 group-hover:scale-110 transition-all">
+                                            <ClipboardList className="h-6 w-6" />
+                                        </div>
+                                        <div>
+                                            <p className="font-bold text-gray-900">Behavior Evaluation</p>
+                                            <p className="text-xs text-gray-500">Evaluasi Perubahan Perilaku (Level 3)</p>
+                                        </div>
+                                    </div>
+                                    <ArrowRight className="h-5 w-5 text-gray-300 group-hover:text-blue-500 group-hover:translate-x-1 transition-all" />
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
+
+                    {/* Quick Stats or Info */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+                            <p className="text-[10px] font-bold text-emerald-600 uppercase tracking-wider mb-1">Sudah Dievaluasi</p>
+                            <p className="text-2xl font-bold text-emerald-700">18</p>
+                        </div>
+                        <div className="bg-orange-50 p-4 rounded-xl border border-orange-100">
+                            <p className="text-[10px] font-bold text-orange-600 uppercase tracking-wider mb-1">Belum Dievaluasi</p>
+                            <p className="text-2xl font-bold text-orange-700">6</p>
+                        </div>
+                        <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                            <p className="text-[10px] font-bold text-gray-600 uppercase tracking-wider mb-1">Deadline Evaluasi</p>
+                            <p className="text-sm font-bold text-gray-700">15 Jan 2026</p>
+                        </div>
+                    </div>
                 </TabsContent>
             </Tabs>
         </div>

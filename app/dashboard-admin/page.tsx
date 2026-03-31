@@ -10,16 +10,16 @@ import { Card, CardContent } from "@/components/ui/card";
 export default function AdminDashboardPage() {
     // Mock Data
     const onboardingStats = [
-        { label: "CLASS", value: "18", icon: School, color: "bg-blue-50 text-blue-600" },
-        { label: "MENTEE", value: "245", icon: Users, color: "bg-blue-50 text-blue-600" },
-        { label: "MENTOR", value: "24", icon: Users, color: "bg-blue-50 text-blue-600" },
-        { label: "CO-MEN", value: "30", icon: Clock, color: "bg-blue-50 text-blue-600" },
+        { label: "CLASS", value: "18/20", icon: School, color: "bg-blue-50 text-blue-600" },
+        { label: "MENTEE", value: "245/300", icon: Users, color: "bg-blue-50 text-blue-600" },
+        { label: "MENTOR", value: "24/30", icon: Users, color: "bg-blue-50 text-blue-600" },
+        { label: "CO-MEN", value: "30/40", icon: Clock, color: "bg-blue-50 text-blue-600" },
     ];
 
     const trainingStats = [
-        { label: "USER", value: "1520", icon: Users, color: "bg-blue-50 text-blue-600" },
-        { label: "NEW", value: "85", icon: Users, color: "bg-blue-50 text-blue-600" },
-        { label: "COURSE", value: "62", icon: BookOpen, color: "bg-blue-50 text-blue-600" },
+        { label: "USER", value: "1520/2000", icon: Users, color: "bg-blue-50 text-blue-600" },
+        { label: "NEW", value: "85/150", icon: Users, color: "bg-blue-50 text-blue-600" },
+        { label: "COURSE", value: "62/80", icon: BookOpen, color: "bg-blue-50 text-blue-600" },
     ];
 
     // Expanded Stats (Removed TDP)

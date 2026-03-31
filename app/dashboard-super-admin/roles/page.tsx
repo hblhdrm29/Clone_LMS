@@ -60,7 +60,7 @@ export default function RoleManagementPage() {
                     { name: "Mentor", desc: "Create courses, grade assignments, and mentor students.", users: 12, permissions: "18 Permissions", color: "bg-orange-50 text-orange-600 border-orange-100" },
                     { name: "Co-Mentor", desc: "Assist mentors in managing classes and discussions.", users: 8, permissions: "12 Permissions", color: "bg-teal-50 text-teal-600 border-teal-100" },
                     { name: "Karyawan (Learner)", desc: "Access courses, take quizzes, and track personal progress.", users: 145, permissions: "Read Only", color: "bg-green-50 text-green-600 border-green-100" },
-                    { name: "Onboarding", desc: "Limited access for new employees during orientation.", users: 24, permissions: "Limited", color: "bg-gray-50 text-gray-600 border-gray-200" },
+                    { name: "Onboarding Karyawan", desc: "Limited access for new employees during orientation.", users: 24, permissions: "Limited", color: "bg-gray-50 text-gray-600 border-gray-200" },
                 ].map((role, i) => (
                     <div key={i} className="group bg-white rounded-xl border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col">
                         <div className="p-6 flex-1">

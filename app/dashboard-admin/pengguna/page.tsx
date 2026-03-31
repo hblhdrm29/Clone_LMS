@@ -21,7 +21,7 @@ const userData = [
     { id: 26, nomorPokok: "ONB08", nama: "HANIFAH PUTRI", kodeSTO: "33X10", namaUnit: "Unit SDM", jabatan: "Magang Trainee", status: "aktif", category: "onboarding" },
     { id: 27, nomorPokok: "ONB09", nama: "INDRA KUSUMA", kodeSTO: "42D10", namaUnit: "Unit IT", jabatan: "Magang Trainee", status: "aktif", category: "onboarding" },
     { id: 28, nomorPokok: "ONB10", nama: "JOKO WIDODO", kodeSTO: "33X10", namaUnit: "Unit SDM", jabatan: "Magang Trainee", status: "aktif", category: "onboarding" },
-    
+
     // User (10)
     { id: 3, nomorPokok: "USR01", nama: "CITRA LESTARI", kodeSTO: "49H00", namaUnit: "Unit Keuangan", jabatan: "Staff", status: "aktif", category: "user" },
     { id: 4, nomorPokok: "USR02", nama: "DEWI KARTIKA", kodeSTO: "12B30", namaUnit: "Unit Pemasaran", jabatan: "Staff", status: "aktif", category: "user" },
@@ -33,7 +33,7 @@ const userData = [
     { id: 36, nomorPokok: "USR08", nama: "JERRY PRATAMA", kodeSTO: "12B30", namaUnit: "Unit Pemasaran", jabatan: "Staff", status: "aktif", category: "user" },
     { id: 37, nomorPokok: "USR09", nama: "KIKI AMALIA", kodeSTO: "49H00", namaUnit: "Unit Keuangan", jabatan: "Staff", status: "aktif", category: "user" },
     { id: 38, nomorPokok: "USR10", nama: "LUKMAN HAKIM", kodeSTO: "12B30", namaUnit: "Unit Pemasaran", jabatan: "Staff", status: "aktif", category: "user" },
-    
+
     // Mentor (10)
     { id: 11, nomorPokok: "MTR01", nama: "AHMAD MENTOR", kodeSTO: "42D10", namaUnit: "Unit Training", jabatan: "Mentor Senior", status: "aktif", category: "mentor" },
     { id: 15, nomorPokok: "MTR02", nama: "REZA MENTOR", kodeSTO: "42D10", namaUnit: "Unit Training", jabatan: "Mentor Specialist", status: "aktif", category: "mentor" },
@@ -45,7 +45,7 @@ const userData = [
     { id: 46, nomorPokok: "MTR08", nama: "XENA MENTOR", kodeSTO: "42D10", namaUnit: "Unit Training", jabatan: "Mentor", status: "aktif", category: "mentor" },
     { id: 47, nomorPokok: "MTR09", nama: "YUDI MENTOR", kodeSTO: "42D10", namaUnit: "Unit Training", jabatan: "Mentor", status: "aktif", category: "mentor" },
     { id: 48, nomorPokok: "MTR10", nama: "ZASKIA MENTOR", kodeSTO: "42D10", namaUnit: "Unit Training", jabatan: "Mentor", status: "aktif", category: "mentor" },
-    
+
     // Co-Mentor (10)
     { id: 12, nomorPokok: "COM01", nama: "SITI CO-MENTOR", kodeSTO: "42D10", namaUnit: "Unit Training", jabatan: "Co-Mentor Junior", status: "aktif", category: "co-mentor" },
     { id: 16, nomorPokok: "COM02", nama: "DIAN CO-MENTOR", kodeSTO: "42D10", namaUnit: "Unit Training", jabatan: "Co-Mentor Assistant", status: "aktif", category: "co-mentor" },
@@ -57,7 +57,7 @@ const userData = [
     { id: 56, nomorPokok: "COM08", nama: "JULIA CO-MENTOR", kodeSTO: "42D10", namaUnit: "Unit Training", jabatan: "Co-Mentor", status: "aktif", category: "co-mentor" },
     { id: 57, nomorPokok: "COM09", nama: "KURNIA CO-MENTOR", kodeSTO: "42D10", namaUnit: "Unit Training", jabatan: "Co-Mentor", status: "aktif", category: "co-mentor" },
     { id: 58, nomorPokok: "COM10", nama: "LENI CO-MENTOR", kodeSTO: "42D10", namaUnit: "Unit Training", jabatan: "Co-Mentor", status: "aktif", category: "co-mentor" },
-    
+
     // Admin PSP (10)
     { id: 13, nomorPokok: "ADM01", nama: "ADIT ADMIN PSP", kodeSTO: "10A00", namaUnit: "Unit Administrasi", jabatan: "Admin PSP Utama", status: "aktif", category: "admin-psp" },
     { id: 17, nomorPokok: "ADM02", nama: "LALA ADMIN PSP", kodeSTO: "10A00", namaUnit: "Unit Administrasi", jabatan: "Admin PSP Support", status: "aktif", category: "admin-psp" },
@@ -69,7 +69,7 @@ const userData = [
     { id: 66, nomorPokok: "ADM08", nama: "RENO ADMIN PSP", kodeSTO: "10A00", namaUnit: "Unit Administrasi", jabatan: "Admin", status: "aktif", category: "admin-psp" },
     { id: 67, nomorPokok: "ADM09", nama: "SARI ADMIN PSP", kodeSTO: "10A00", namaUnit: "Unit Administrasi", jabatan: "Admin", status: "aktif", category: "admin-psp" },
     { id: 68, nomorPokok: "ADM10", nama: "TATA ADMIN PSP", kodeSTO: "10A00", namaUnit: "Unit Administrasi", jabatan: "Admin", status: "aktif", category: "admin-psp" },
-    
+
     // Superadmin (10)
     { id: 14, nomorPokok: "SUP01", nama: "SUPERHERO ADMIN", kodeSTO: "00S00", namaUnit: "Unit Pusat", jabatan: "Super Admin", status: "aktif", category: "superadmin" },
     { id: 18, nomorPokok: "SUP02", nama: "MASTER ADMIN", kodeSTO: "00S00", namaUnit: "Unit Pusat", jabatan: "Global Super Admin", status: "aktif", category: "superadmin" },

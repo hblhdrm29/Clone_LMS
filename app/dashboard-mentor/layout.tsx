@@ -224,15 +224,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                         <NavItem icon={BookOpen} label="My Classes" href="/dashboard-mentor/my-classes" />
                         <NavItem icon={Users} label="List Mentee" href="/dashboard-mentor/list-mentee" />
 
-                        <NavGroup icon={ClipboardList} label="Evaluasi" matchPath="/dashboard-mentor/evaluasi">
-                            {/* Level 3 Sub-Section */}
-                            <div className="pl-9 mt-1">
-                                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Level 3</p>
-                                <div className="space-y-1 border-l border-gray-100 pl-2">
-                                    <NavItem label="Behavior" href="/dashboard-mentor/evaluasi-level-3" small />
-                                </div>
-                            </div>
-                        </NavGroup>
                     </div>
 
                     <div className="border-t mt-auto p-2">

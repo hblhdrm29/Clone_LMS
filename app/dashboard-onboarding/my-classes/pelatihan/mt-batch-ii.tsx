@@ -100,7 +100,7 @@ export function MtBatchTwo() {
                     action: { label: "Klik" }
                 },
                 {
-                    title: "Phase 1 Final Assessment",
+                    title: "Final Assessment",
                     type: "assessment",
                     subtitle: "Submitted • Aug 30, 2024",
                     action: { label: "View Result" }
