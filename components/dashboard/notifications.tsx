@@ -5,14 +5,17 @@ import { Bell } from "lucide-react"
 
 export function Notifications() {
     return (
-        <Card className="border-none shadow-sm overflow-hidden">
-            <div className="bg-blue-50/50 p-4 border-b border-blue-100">
-                <h3 className="font-semibold text-base text-gray-900 flex items-center gap-2">
-                    <Bell className="h-4 w-4 text-red-500" />
-                    Pemberitahuan
-                </h3>
+        <Card className="border-none shadow-sm h-full overflow-hidden">
+            <div className="bg-blue-50/50 p-3 border-b border-blue-100 flex items-center justify-between">
+                <div>
+                    <h3 className="font-semibold text-lg text-gray-900 flex items-center gap-2">
+                        <Bell className="h-4 w-4 text-red-500" />
+                        Pemberitahuan
+                    </h3>
+                    <p className="text-xs text-muted-foreground">Notification Alerts</p>
+                </div>
             </div>
-            <CardContent className="p-6">
+            <CardContent className="p-4">
                 <div className="space-y-3">
                     <div className="bg-red-50 border border-red-100 p-3 rounded-lg">
                         <p className="text-[11px] font-bold text-gray-800">Belum mengisi Evaluasi Level 1:</p>

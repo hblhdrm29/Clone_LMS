@@ -3,7 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
-import { FileText, Calendar, Trophy, Share2, MessageSquare, Lightbulb } from "lucide-react"
+import { FileText, Calendar, Trophy, Users, Share2, MessageSquare, Lightbulb } from "lucide-react"
 
 interface CourseCardProps {
     image?: string
@@ -14,6 +14,7 @@ interface CourseCardProps {
     score?: string
     status: "Passed" | "OnProgress" | "Unpassed"
     progress: number
+    participants?: string
     icon?: any
     footerLabel?: string
     footerValue?: string
@@ -28,6 +29,7 @@ export function CourseCard({
     score,
     status,
     progress,
+    participants,
     icon: Icon = FileText,
     footerLabel,
     footerValue
@@ -82,6 +84,12 @@ export function CourseCard({
                         <Trophy className="h-3.5 w-3.5 text-yellow-500" />
                         <span className="font-medium text-gray-700">Rank: {rank}</span>
                     </div>
+                    {participants && (
+                        <div className="flex items-center gap-2 text-xs text-gray-500">
+                            <Users className="h-3.5 w-3.5 text-blue-500" />
+                            <span className="font-medium text-gray-700">Participants: {participants}</span>
+                        </div>
+                    )}
                 </div>
 
                 <div className="flex-1"></div>

@@ -8,8 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Calendar, ArrowLeft } from "lucide-react";
 
 export default function CreateClassesPage() {
-    const [visible, setVisible] = React.useState<"show" | "hidden">("show");
-    const [enrollVisible, setEnrollVisible] = React.useState<"yes" | "no">("no");
+    const [status, setStatus] = React.useState<"draft" | "publish">("draft");
 
     return (
         <div className="p-6 space-y-6">
@@ -42,7 +41,7 @@ export default function CreateClassesPage() {
                                     <option>Choose Kategori</option>
                                     <option>Magang Trainee</option>
                                     <option>PKWT</option>
-                                    <option>Regular</option>
+                                    <option>Prohire</option>
                                 </select>
                                 <svg className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -142,34 +141,6 @@ export default function CreateClassesPage() {
                             </div>
                         </div>
 
-                        {/* Visible */}
-                        <div className="space-y-1.5">
-                            <label className="text-sm font-medium text-gray-700">
-                                Visible <span className="text-red-500">*</span>
-                            </label>
-                            <div className="flex items-center gap-6">
-                                <label className="flex items-center gap-2 cursor-pointer">
-                                    <input
-                                        type="radio"
-                                        name="visible"
-                                        checked={visible === "show"}
-                                        onChange={() => setVisible("show")}
-                                        className="w-4 h-4 text-blue-600"
-                                    />
-                                    <span className="text-sm text-gray-600">Show</span>
-                                </label>
-                                <label className="flex items-center gap-2 cursor-pointer">
-                                    <input
-                                        type="radio"
-                                        name="visible"
-                                        checked={visible === "hidden"}
-                                        onChange={() => setVisible("hidden")}
-                                        className="w-4 h-4 text-blue-600"
-                                    />
-                                    <span className="text-sm text-gray-600">Hidden</span>
-                                </label>
-                            </div>
-                        </div>
 
                         {/* Dates - Side by Side */}
                         <div className="grid grid-cols-2 gap-4">
@@ -210,7 +181,7 @@ export default function CreateClassesPage() {
                             />
                         </div>
 
-                        {/* Visible (Enroll) */}
+                        {/* Status Class */}
                         <div className="space-y-1.5">
                             <label className="text-sm font-medium text-gray-700">
                                 Visible
@@ -219,22 +190,22 @@ export default function CreateClassesPage() {
                                 <label className="flex items-center gap-2 cursor-pointer">
                                     <input
                                         type="radio"
-                                        name="enrollVisible"
-                                        checked={enrollVisible === "yes"}
-                                        onChange={() => setEnrollVisible("yes")}
+                                        name="status"
+                                        checked={status === "publish"}
+                                        onChange={() => setStatus("publish")}
                                         className="w-4 h-4 text-blue-600"
                                     />
-                                    <span className="text-sm text-gray-600">Yes</span>
+                                    <span className="text-sm text-gray-600">Publish</span>
                                 </label>
                                 <label className="flex items-center gap-2 cursor-pointer">
                                     <input
                                         type="radio"
-                                        name="enrollVisible"
-                                        checked={enrollVisible === "no"}
-                                        onChange={() => setEnrollVisible("no")}
+                                        name="status"
+                                        checked={status === "draft"}
+                                        onChange={() => setStatus("draft")}
                                         className="w-4 h-4 text-blue-600"
                                     />
-                                    <span className="text-sm text-gray-600">No</span>
+                                    <span className="text-sm text-gray-600">Draft</span>
                                 </label>
                             </div>
                         </div>

@@ -89,7 +89,7 @@ function MenteeListCard() {
             </div>
             <CardContent className="space-y-2 p-4">
                 {[
-                    { name: "ABCDEF GHIJK LMNO", batch: "Batch I", role: "SDM", initials: "AG", color: "bg-purple-100 text-purple-600" },
+                    { name: "ABCDEF GHIJK LMNO", batch: "Batch I", role: "SDM", initials: "AG", color: "bg-blue-100 text-blue-600" },
                     { name: "EFGHI JKLMN OPQR", batch: "Batch II", role: "SDM", initials: "EJ", color: "bg-blue-100 text-blue-600" },
                     { name: "JKLMNOP QRSTUVW X", batch: "PKWT XII", role: "SDM", initials: "JQ", color: "bg-green-100 text-green-600" },
                 ].map((mentee, i) => (

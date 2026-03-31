@@ -30,7 +30,7 @@ const notifications = [
         message: "Dr. Budi Santoso scheduled a new mentoring session.",
         time: "5 hours ago",
         icon: GraduationCap,
-        color: "bg-purple-100 text-purple-600"
+        color: "bg-blue-100 text-blue-600"
     },
     {
         id: 4,

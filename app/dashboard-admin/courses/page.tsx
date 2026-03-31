@@ -10,14 +10,12 @@ import { cn } from "@/lib/utils";
 
 // Mock Data
 const coursesData = [
-    { id: 1, kategori: "TDP Kaun", fullname: "TDP Kaun - Batch X", shortname: "kaun10", date: "sep - des 2025", visible: true, hasCert: true },
-    { id: 2, kategori: "Pelatihan Wajib", fullname: "ISO 27001", shortname: "iso27001", date: "oct - nov 2025", visible: true, hasCert: true },
-    { id: 3, kategori: "Pelatihan Produksi", fullname: "Teknologi Laser", shortname: "laser", date: "jan - mar 2025", visible: true, hasCert: true },
-    { id: 4, kategori: "TDP Kasek", fullname: "TDP Kasek - Batch IX", shortname: "pkst3", date: "feb - apr 2025", visible: false, hasCert: true },
-    { id: 5, kategori: "Onboarding", fullname: "Program Orientasi", shortname: "orient24", date: "jan 2025", visible: false, hasCert: true },
-    { id: 6, kategori: "Technical", fullname: "Cyber Security Basics", shortname: "cyber_bas", date: "mar 2025", visible: false, hasCert: false },
-    { id: 7, kategori: "Leadership", fullname: "Managerial Skills", shortname: "mng_skill", date: "apr 2025", visible: false, hasCert: false },
-    { id: 8, kategori: "Soft Skills", fullname: "Effective Communication", shortname: "comm_eff", date: "may 2025", visible: false, hasCert: true },
+    { id: 1, kategori: "PKWT", fullname: "Training Dasar PKWT", shortname: "pkwt_base", date: "sep - des 2025", visible: true, hasCert: true },
+    { id: 2, kategori: "Prohire", fullname: "Onboarding Prohire", shortname: "pro_onboard", date: "oct - nov 2025", visible: true, hasCert: true },
+    { id: 3, kategori: "Magang Trainee", fullname: "Management Trainee Batch I", shortname: "mt_b1", date: "jan - mar 2025", visible: true, hasCert: true },
+    { id: 4, kategori: "PKWT", fullname: "Kesehatan & Keselamatan Kerja", shortname: "k3_pkwt", date: "feb - apr 2025", visible: false, hasCert: true },
+    { id: 5, kategori: "Magang Trainee", fullname: "Leadership Essentials", shortname: "mt_lead", date: "jan 2025", visible: false, hasCert: true },
+    { id: 6, kategori: "Prohire", fullname: "Advanced Technical Skills", shortname: "tech_adv", date: "mar 2025", visible: false, hasCert: false },
 ];
 
 export default function CoursesPage() {
@@ -151,10 +149,12 @@ export default function CoursesPage() {
                                     <td className="px-4 py-4 text-center">
                                         {course.visible ? (
                                             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700 uppercase">
-                                                Show
+                                                Publish
                                             </span>
                                         ) : (
-                                            <span className="text-gray-300 text-xs">xxxxx</span>
+                                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-gray-100 text-gray-500 uppercase">
+                                                Draft
+                                            </span>
                                         )}
                                     </td>
                                     <td className="px-4 py-4 text-center">

@@ -201,17 +201,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                             <div className="pl-9 mt-1 mb-3">
                                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Level 1</p>
                                 <div className="space-y-1 border-l border-gray-100 pl-2">
-                                    <NavItem label="Reaction" href="/dashboard-onboarding/evaluasi-level-1" small />
+                                    <NavItem label="MT-Batch III" href="/dashboard-onboarding/evaluasi-level-1" small />
                                 </div>
                             </div>
 
-                            {/* Level 3 Sub-Section */}
-                            <div className="pl-9 mt-1">
-                                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Level 3</p>
-                                <div className="space-y-1 border-l border-gray-100 pl-2">
-                                    <NavItem label="Behavior" href="/dashboard-onboarding/evaluasi-level-3" small />
-                                </div>
-                            </div>
                         </NavGroup>
                     </div>
 

@@ -21,17 +21,21 @@ export default function DashboardPage() {
             {/* Stats Row */}
             <StatsCards />
 
-            {/* Main Content Info Rows */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                {/* Left Column (Course Stats + Notifications) */}
-                <div className="lg:col-span-1 space-y-6">
+            {/* Main Content Rows */}
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+                {/* Left Column (Course Stats) */}
+                <div>
                     <CourseStats />
-                    <Notifications />
                 </div>
 
-                {/* Right Column (Top Performers) */}
-                <div className="lg:col-span-2">
+                {/* Center Column (Top Performers) */}
+                <div>
                     <TopPerformers />
+                </div>
+
+                {/* Right Column (Notifications) */}
+                <div>
+                    <Notifications />
                 </div>
             </div>
         </div>

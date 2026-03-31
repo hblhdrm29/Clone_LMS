@@ -11,13 +11,11 @@ import { cn } from "@/lib/utils";
 // Mock Data
 const classesData = [
     { id: 1, kategori: "Magang Trainee", fullname: "MT-Batch II", shortname: "mt2", date: "sep - des 2025", visible: true },
-    { id: 2, kategori: "PKWT", fullname: "PKWT-Batch X", shortname: "pkwt10", date: "xxxxxx", visible: true },
-    { id: 3, kategori: "Magang Trainee", fullname: "MT-Batch I", shortname: "mt1", date: "xxxxxx", visible: true },
-    { id: 4, kategori: "PKWT", fullname: "PKWT-Batch IX", shortname: "pkwt8", date: "xxxxxx", visible: false },
-    { id: 5, kategori: "xxxx", fullname: "xxxxx", shortname: "xxxxx xxxxxxxx", date: "", visible: false },
-    { id: 6, kategori: "xxxx", fullname: "xxxxx", shortname: "xxxxx xxxxxxxx", date: "", visible: false },
-    { id: 7, kategori: "xxxx", fullname: "xxxxx", shortname: "xxxxx xxxxxxxx", date: "", visible: false },
-    { id: 8, kategori: "xxxx", fullname: "xxxxx", shortname: "xxxxx xxxxxxxx", date: "", visible: false },
+    { id: 2, kategori: "PKWT", fullname: "PKWT-Batch X", shortname: "pkwt10", date: "oct - dec 2025", visible: true },
+    { id: 3, kategori: "Magang Trainee", fullname: "MT-Batch I", shortname: "mt1", date: "jan - mar 2025", visible: true },
+    { id: 4, kategori: "PKWT", fullname: "PKWT-Batch IX", shortname: "pkwt9", date: "feb - apr 2025", visible: false },
+    { id: 5, kategori: "Prohire", fullname: "Prohire Specialist", shortname: "pro_spec", date: "aug 2025", visible: false },
+    { id: 6, kategori: "Prohire", fullname: "Technical Prohire", shortname: "tech_pro", date: "sep 2025", visible: true },
 ];
 
 export default function ClassesPage() {
@@ -146,11 +144,13 @@ export default function ClassesPage() {
                                     <td className="px-4 py-4 text-sm text-gray-500 text-center">{classItem.date || ""}</td>
                                     <td className="px-4 py-4 text-center">
                                         {classItem.visible ? (
-                                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-emerald-500 text-white uppercase">
-                                                Show
+                                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700 uppercase">
+                                                Publish
                                             </span>
                                         ) : (
-                                            <span className="text-purple-600 text-xs font-bold">xxxxx</span>
+                                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-gray-100 text-gray-500 uppercase">
+                                                Draft
+                                            </span>
                                         )}
                                     </td>
                                     <td className="px-4 py-4 text-center">

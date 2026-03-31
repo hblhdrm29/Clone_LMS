@@ -24,7 +24,7 @@ export default function EvaluasiLevel3Page() {
         "Terlihat lebih percaya diri dalam menangani pekerjaan yang berkaitan dengan materi pelatihan.",
         "Menyampaikan sebab-akibat dari suatu permasalahan berdasarkan ilmu pengetahuan yang diperoleh dalam pelatihan.",
         "Berusaha menyelesaikan pekerjaan sesuai standar kualitas yang telah ditetapkan oleh manajemen.",
-        "Mampu menjelaskan kepada karyawan lain yang belum mengerti terkait materi pelatihan.",
+        "Menyampaikan kepada karyawan lain yang belum mengerti terkait materi pelatihan.",
         "Lebih antusias dalam menyelesaikan pekerjaan yang spesifik sesuai materi pelatihan.",
         "Memanfaatkan waktu kerja secara produktif.",
         "Mampu mengemukakan pendapat sesuai materi pelatihan terkait permasalahan tertentu.",

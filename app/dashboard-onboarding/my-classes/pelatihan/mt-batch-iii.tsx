@@ -45,13 +45,41 @@ export function MtBatchThree() {
                     title: "Program Overview Presentation",
                     duration: "Download Slides (PDF)",
                     type: "download",
+                },
+                {
+                    title: "Company Culture & Ethics",
+                    type: "module",
+                    subtitle: "Introduction to Core Values"
+                },
+                {
+                    title: "Communication Skills",
+                    type: "video",
+                    duration: "20 min",
+                    subtitle: "Effective Workplace Interaction"
+                },
+                {
+                    title: "Time Management",
+                    type: "module",
+                    subtitle: "Techniques for Productivity"
+                },
+                {
+                    title: "Problem Solving Workshop",
+                    type: "download",
+                    duration: "Case Study (PDF)",
+                    subtitle: "Analytical Thinking Guide"
+                },
+                {
+                    title: "Industry Analysis 101",
+                    type: "video",
+                    duration: "30 min",
+                    subtitle: "Market Trends & Insights"
                 }
             ]
         },
         {
             title: "Training Phase 1",
             status: "completed",
-            date: "Completed on Sep 2024",
+            date: "Ongoing on Sep 2025",
             content: [
                 {
                     title: "Module 1: Leadership Foundations",
@@ -62,8 +90,14 @@ export function MtBatchThree() {
                 {
                     title: "Module 2: Strategic Thinking",
                     type: "module",
-                    subtitle: "Completed • Aug 25, 2024",
+                    subtitle: "Sudah Mengerjakan Soal Tersebut \n Completed • Aug 25, 2024",
                     score: 88
+                },
+                {
+                    title: "Module 3: Operational Excellence",
+                    type: "module",
+                    subtitle: "On Progress",
+                    action: { label: "Klik" }
                 },
                 {
                     title: "Phase 1 Final Assessment",
@@ -185,11 +219,11 @@ export function MtBatchThree() {
                                                             <div key={i} className="relative pl-6 pb-6 last:pb-0">
                                                                 <div className={cn(
                                                                     "absolute left-0 top-1.5 h-3 w-3 rounded-full border-2 z-10",
-                                                                    step.status === "completed" ? "border-emerald-500 bg-emerald-50" : "border-gray-300 bg-gray-50"
+                                                                    (step.status === "completed" && item.title !== "Module 3: Operational Excellence") ? "border-emerald-500 bg-emerald-50" : "border-gray-300 bg-gray-50"
                                                                 )}></div>
 
                                                                 <h4 className="font-bold text-sm text-gray-900 mb-1">{item.title}</h4>
-                                                                {item.subtitle && <p className="text-xs text-gray-500 mb-2">{item.subtitle}</p>}
+                                                                {item.subtitle && <p className="text-xs text-gray-500 mb-2 whitespace-pre-line">{item.subtitle}</p>}
 
                                                                 {(item.type === "video" || item.type === "download") && (
                                                                     <div className="bg-gray-50 rounded-lg p-4 border border-gray-100">
@@ -260,23 +294,13 @@ export function MtBatchThree() {
                     <Card className="border-none shadow-sm bg-white">
                         <CardContent className="p-6">
                             <h3 className="font-bold text-gray-900 mb-4 text-sm">Instructor</h3>
-                            <div className="flex items-center gap-3 mb-6">
+                            <div className="flex items-center gap-3">
                                 <div className="h-10 w-10 rounded-full bg-gray-200 overflow-hidden">
                                     <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="Instructor" className="h-full w-full object-cover" />
                                 </div>
                                 <div>
                                     <p className="font-bold text-sm text-gray-900">Dr. Sarah Wijaya</p>
                                     <p className="text-xs text-gray-500">Senior Production Expert</p>
-                                </div>
-                            </div>
-                            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
-                                <div className="text-center">
-                                    <p className="text-xl font-bold text-blue-600">24</p>
-                                    <p className="text-xs text-gray-500">Modules</p>
-                                </div>
-                                <div className="text-center">
-                                    <p className="text-xl font-bold text-gray-900">45h</p>
-                                    <p className="text-xs text-gray-500">Duration</p>
                                 </div>
                             </div>
                         </CardContent>

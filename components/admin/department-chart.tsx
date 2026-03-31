@@ -19,7 +19,7 @@ export function DepartmentChart() {
         { label: "SDM", color: "bg-[#67e8f9]" }, // Cyan
         { label: "IT", color: "bg-[#3b82f6]" }, // Blue
         { label: "DISA", color: "bg-[#6366f1]" }, // Indigo
-        { label: "DICO", color: "bg-[#a855f7]" }, // Purple
+        { label: "DICO", color: "bg-[#3b82f6]" }, // Blue (was Purple)
         { label: "SBU CS", color: "bg-[#ec4899]" }, // Pink
         { label: "SBU HSS", color: "bg-[#f43f5e]" }, // Rose/Salmon
         { label: "Risbang", color: "bg-[#f59e0b]" }, // Amber/Yellow
@@ -27,22 +27,37 @@ export function DepartmentChart() {
 
     return (
         <Card className="bg-white border-none shadow-sm h-full">
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-                {/* Legend Row */}
-                <div className="flex flex-wrap gap-4">
-                    {legends.map((l, i) => (
-                        <div key={i} className="flex items-center gap-1.5">
-                            <div className={`h-2.5 w-2.5 rounded-full ${l.color}`}></div>
-                            <span className="text-[10px] uppercase font-bold text-gray-400 tracking-wider">{l.label}</span>
+            <CardHeader className="flex flex-col gap-4 pb-0">
+                <div className="flex flex-row items-center justify-between w-full">
+                    <CardTitle className="text-base font-bold text-gray-800">Grafik Perdivisi</CardTitle>
+
+                    {/* Date Filters Relocated from Page Bottom */}
+                    <div className="flex items-center gap-3">
+                        <div className="flex flex-col">
+                            <label className="text-[9px] font-bold text-gray-400 uppercase leading-none mb-1">Tanggal Pelatihan</label>
+                            <div className="border rounded px-2 py-1 text-[10px] w-32 bg-white text-gray-600 h-7 flex items-center">31/10/24</div>
                         </div>
-                    ))}
+                        <Button className="bg-[#1e40af] hover:bg-[#1e3a8a] text-white h-7 text-[10px] px-3 self-end">Apply</Button>
+                    </div>
                 </div>
 
-                {/* Filters */}
-                <div className="flex gap-2">
-                    <Button variant="ghost" size="sm" className="h-6 text-[10px] bg-blue-50 text-blue-600 font-bold">2 OKT</Button>
-                    <Button variant="ghost" size="sm" className="h-6 text-[10px] text-gray-400 font-bold">3 OKT</Button>
-                    <Button variant="ghost" size="sm" className="h-6 text-[10px] text-gray-400 font-bold">4 OKT</Button>
+                <div className="flex flex-row items-center justify-between">
+                    {/* Legend Row */}
+                    <div className="flex flex-wrap gap-4">
+                        {legends.map((l, i) => (
+                            <div key={i} className="flex items-center gap-1.5">
+                                <div className={`h-2 w-2 rounded-full ${l.color}`}></div>
+                                <span className="text-[9px] uppercase font-bold text-gray-400 tracking-wider whitespace-nowrap">{l.label}</span>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Quick Filters */}
+                    <div className="flex gap-1">
+                        <Button variant="ghost" size="sm" className="h-6 px-2 text-[9px] bg-blue-50 text-blue-600 font-bold">2 OKT</Button>
+                        <Button variant="ghost" size="sm" className="h-6 px-2 text-[9px] text-gray-400 font-bold">3 OKT</Button>
+                        <Button variant="ghost" size="sm" className="h-6 px-2 text-[9px] text-gray-400 font-bold">4 OKT</Button>
+                    </div>
                 </div>
             </CardHeader>
 
@@ -67,7 +82,7 @@ export function DepartmentChart() {
                                         className={`w-full rounded-t-sm ${idx === 0 ? "bg-[#67e8f9]" :
                                             idx === 1 ? "bg-[#3b82f6]" :
                                                 idx === 2 ? "bg-[#6366f1]" :
-                                                    idx === 3 ? "bg-[#a855f7]" : // DICO
+                                                    idx === 3 ? "bg-[#3b82f6]" : // Blue (was Purple)
                                                         idx === 4 ? "bg-[#ec4899]" : // SBU CS
                                                             idx === 5 ? "bg-[#f43f5e]" : // SBU HSS
                                                                 "bg-[#f59e0b]" // Risbang
@@ -79,7 +94,7 @@ export function DepartmentChart() {
                                             className={`w-full rounded-b-sm opacity-60 ${idx === 0 ? "bg-[#67e8f9]" :
                                                 idx === 1 ? "bg-[#3b82f6]" :
                                                     idx === 2 ? "bg-[#6366f1]" :
-                                                        idx === 3 ? "bg-[#a855f7]" :
+                                                        idx === 3 ? "bg-[#3b82f6]" :
                                                             idx === 4 ? "bg-[#ec4899]" :
                                                                 idx === 5 ? "bg-[#f43f5e]" :
                                                                     "bg-[#f59e0b]"
@@ -92,6 +107,11 @@ export function DepartmentChart() {
                             </div>
                         ))}
                     </div>
+                </div>
+                <div className="mt-4 flex justify-end">
+                    <Button className="bg-[#1e40af] hover:bg-[#1e3a8a] text-white h-7 text-[10px] px-3">
+                        Export
+                    </Button>
                 </div>
             </CardContent>
         </Card>

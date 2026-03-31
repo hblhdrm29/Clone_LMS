@@ -20,7 +20,8 @@ import {
     GraduationCap,
     IdCard,
     ChevronDown,
-    RefreshCw
+    RefreshCw,
+    ClipboardList
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -222,6 +223,16 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                         <NavItem icon={LayoutDashboard} label="Dashboard" href="/dashboard-comentor" />
                         <NavItem icon={BookOpen} label="My Classes" href="/dashboard-comentor/my-classes" />
                         <NavItem icon={Users} label="List Mentee" href="/dashboard-comentor/list-mentee" />
+
+                        <NavGroup icon={ClipboardList} label="Evaluasi" matchPath="/dashboard-comentor/evaluasi">
+                            {/* Level 3 Sub-Section */}
+                            <div className="pl-9 mt-1">
+                                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Level 3</p>
+                                <div className="space-y-1 border-l border-gray-100 pl-2">
+                                    <NavItem label="Behavior" href="/dashboard-comentor/evaluasi-level-3" small />
+                                </div>
+                            </div>
+                        </NavGroup>
                     </div>
 
                     <div className="border-t mt-auto p-2">
@@ -284,5 +295,54 @@ function NavItem({
             {Icon && <Icon className={cn("h-5 w-5", isActive && !disableHover && "text-blue-600")} />}
             <span className={cn("text-sm", small && "text-[12px]")}>{label}</span>
         </Link>
+    )
+}
+
+function NavGroup({ icon: Icon, label, href, matchPath, children }: { icon: any, label: string, href?: string, matchPath?: string, children: React.ReactNode }) {
+    const pathname = usePathname()
+    const targetPath = matchPath || href
+    const isActive = targetPath && (targetPath === "/dashboard-comentor" ? pathname === "/dashboard-comentor" : pathname?.startsWith(targetPath))
+
+    const [isOpen, setIsOpen] = React.useState(!!isActive)
+
+    React.useEffect(() => {
+        if (isActive) setIsOpen(true)
+    }, [isActive])
+
+    return (
+        <div>
+            <div className={cn(
+                "w-full flex items-center justify-between px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer",
+                isActive && "bg-blue-50 text-blue-600 font-medium hover:bg-blue-100"
+            )}
+                onClick={() => !href && setIsOpen(!isOpen)}
+            >
+                {href ? (
+                    <Link
+                        href={href}
+                        className="flex items-center gap-3 flex-1"
+                        onClick={(e) => {
+                            if (isActive) setIsOpen(!isOpen)
+                        }}
+                    >
+                        <Icon className={cn("h-5 w-5", isActive && "text-blue-600")} />
+                        <span className="text-sm">{label}</span>
+                    </Link>
+                ) : (
+                    <div className="flex items-center gap-3 flex-1">
+                        <Icon className={cn("h-5 w-5", isActive && "text-blue-600")} />
+                        <span className="text-sm">{label}</span>
+                    </div>
+                )}
+
+                <button onClick={(e) => {
+                    e.stopPropagation()
+                    setIsOpen(!isOpen)
+                }} className="p-1 rounded">
+                    <ChevronDown className={cn("h-4 w-4 transition-transform", isOpen && "rotate-180")} />
+                </button>
+            </div>
+            {isOpen && children}
+        </div>
     )
 }

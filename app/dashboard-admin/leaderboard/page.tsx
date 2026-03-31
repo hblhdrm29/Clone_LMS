@@ -24,10 +24,6 @@ const leaderboardData = [
 const categories = [
     { id: "onboarding", label: "Onboarding" },
     { id: "user", label: "User" },
-    { id: "tdp_kaun", label: "TDP Kaun" },
-    { id: "tdp_kasek", label: "TDP Kasek" },
-    { id: "tdp_kadep", label: "TDP Kadep" },
-    { id: "tdp_kadiv", label: "TDP Kadiv" },
 ];
 
 export default function LeaderboardPage() {
@@ -45,13 +41,13 @@ export default function LeaderboardPage() {
             <Card className="bg-white border-none shadow-sm">
                 <CardContent className="p-4">
                     <div className="flex flex-col lg:flex-row gap-4 items-end">
-                        {/* Role Filter */}
+                        {/* Program Filter */}
                         <div className="flex-1 space-y-1">
-                            <label className="text-[10px] font-bold text-gray-500 uppercase">Role</label>
+                            <label className="text-[10px] font-bold text-gray-500 uppercase">Program</label>
                             <div className="relative">
                                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                                 <Input
-                                    placeholder="Filter Role"
+                                    placeholder="Filter Program"
                                     className="pl-9 h-9 text-sm border-gray-200"
                                 />
                             </div>
@@ -100,10 +96,10 @@ export default function LeaderboardPage() {
                         key={cat.id}
                         onClick={() => setActiveCategory(cat.id)}
                         className={cn(
-                            "px-4 py-2 rounded-full text-xs font-bold transition-colors",
+                            "px-4 py-2 rounded-full text-xs font-bold transition-all duration-200",
                             activeCategory === cat.id
-                                ? "bg-[#1e3a5f] text-white"
-                                : "bg-white text-gray-600 border border-gray-200 hover:bg-gray-50"
+                                ? "bg-sky-600 text-white shadow-md transform scale-105"
+                                : "bg-white text-gray-600 border border-gray-200 hover:bg-sky-50 hover:border-sky-200 hover:text-sky-600"
                         )}
                     >
                         {cat.label}
@@ -128,7 +124,7 @@ export default function LeaderboardPage() {
                     <table className="w-full">
                         <thead>
                             <tr className="text-white" style={{ background: "linear-gradient(to right, #2563EB 0%, #7E22CE 100%)" }}>
-                                <th className="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider w-12">#</th>
+                                <th className="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider w-24">RANKING</th>
                                 <th className="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider">Nomor Pokok</th>
                                 <th className="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-wider">Nama</th>
                                 <th className="px-4 py-3 text-center text-[10px] font-bold uppercase tracking-wider">Kode STO</th>

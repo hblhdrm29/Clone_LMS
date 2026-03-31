@@ -37,6 +37,10 @@ export default function UserManagementPage() {
                         <Download className="h-4 w-4" />
                         Export
                     </Button>
+                    <Button variant="outline" className="gap-2 border-blue-200 text-blue-700 hover:bg-blue-50">
+                        <Shield className="h-4 w-4" />
+                        Assign Role User
+                    </Button>
                     <Button className="gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 border-0 shadow-lg shadow-blue-500/20">
                         <Plus className="h-4 w-4" />
                         Add New User
@@ -104,17 +108,18 @@ export default function UserManagementPage() {
                             <th className="px-6 py-4">User Profile</th>
                             <th className="px-6 py-4">Role & Access</th>
                             <th className="px-6 py-4">Join Date</th>
+                            <th className="px-6 py-4">Kode STO</th>
                             <th className="px-6 py-4">Status</th>
                             <th className="px-6 py-4 text-right">Action</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">
                         {[
-                            { name: "Santika Tri Hapsari", email: "santika@peruri.co.id", role: "Super Admin", roleColor: "bg-indigo-100 text-indigo-700", status: "Active", date: "Jan 12, 2024", avatar: "https://github.com/shadcn.png" },
-                            { name: "Budi Santoso", email: "budi.s@peruri.co.id", role: "Admin PSP", roleColor: "bg-blue-100 text-blue-700", status: "Active", date: "Feb 05, 2024", avatar: null },
-                            { name: "Siti Rahmawati", email: "siti.rahma@peruri.co.id", role: "Mentor", roleColor: "bg-orange-100 text-orange-700", status: "Active", date: "Mar 20, 2024", avatar: null },
-                            { name: "Ahmad Rizki", email: "ahmad.r@peruri.co.id", role: "Karyawan", roleColor: "bg-green-100 text-green-700", status: "Inactive", date: "Apr 10, 2024", avatar: null },
-                            { name: "Dewi Lestari", email: "dewi.l@peruri.co.id", role: "Co-Mentor", roleColor: "bg-teal-100 text-teal-700", status: "Active", date: "May 15, 2024", avatar: null },
+                            { name: "Santika Tri Hapsari", email: "santika@peruri.co.id", role: "Super Admin", roleColor: "bg-indigo-100 text-indigo-700", status: "Active", date: "Jan 12, 2024", sto: "3351A", avatar: "https://github.com/shadcn.png" },
+                            { name: "Budi Santoso", email: "budi.s@peruri.co.id", role: "Admin PSP", roleColor: "bg-blue-100 text-blue-700", status: "Active", date: "Feb 05, 2024", sto: "3251B", avatar: null },
+                            { name: "Siti Rahmawati", email: "siti.rahma@peruri.co.id", role: "Mentor", roleColor: "bg-orange-100 text-orange-700", status: "Active", date: "Mar 20, 2024", sto: "5632N", avatar: null },
+                            { name: "Ahmad Rizki", email: "ahmad.r@peruri.co.id", role: "Karyawan", roleColor: "bg-green-100 text-green-700", status: "Inactive", date: "Apr 10, 2024", sto: "0982Z", avatar: null },
+                            { name: "Dewi Lestari", email: "dewi.l@peruri.co.id", role: "Co-Mentor", roleColor: "bg-teal-100 text-teal-700", status: "Active", date: "May 15, 2024", sto: "1234L", avatar: null },
                         ].map((user, i) => (
                             <tr key={i} className="hover:bg-gray-50/50 transition-colors group">
                                 <td className="px-6 py-4">
@@ -145,6 +150,11 @@ export default function UserManagementPage() {
                                     <div className="flex items-center gap-2 text-gray-500">
                                         <Calendar className="h-4 w-4 text-gray-400" />
                                         {user.date}
+                                    </div>
+                                </td>
+                                <td className="px-6 py-4">
+                                    <div className="font-medium text-gray-700">
+                                        {user.sto}
                                     </div>
                                 </td>
                                 <td className="px-6 py-4">
