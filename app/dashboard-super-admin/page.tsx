@@ -37,7 +37,7 @@ export default function SuperAdminDashboard() {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <StatCard
                     title="Total Users"
                     value="1,248"
@@ -51,20 +51,6 @@ export default function SuperAdminDashboard() {
                     label="Distinct role types defined"
                     icon={Shield}
                     color="text-indigo-500"
-                />
-                <StatCard
-                    title="System Load"
-                    value="24%"
-                    label="Average server CPU usage"
-                    icon={Server}
-                    color="text-emerald-500"
-                />
-                <StatCard
-                    title="Audit Events"
-                    value="856"
-                    label="Events logged today"
-                    icon={Activity}
-                    color="text-amber-500"
                 />
             </div>
 
