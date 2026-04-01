@@ -22,7 +22,7 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { ClipboardList, ArrowRight } from "lucide-react"
 
-import cover1 from "../../../../public/assets/class-cover-1.png"
+import cover1 from "../../../../public/assets/p1_wide.png"
 
 export default function ClassDetailPage() {
     const params = useParams()

@@ -1,4 +1,4 @@
-"use strict";
+"use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -33,9 +33,20 @@ export function DepartmentChart() {
 
                     {/* Date Filters Relocated from Page Bottom */}
                     <div className="flex items-center gap-3">
-                        <div className="flex flex-col">
+                        <div className="flex flex-col relative">
                             <label className="text-[9px] font-bold text-gray-400 uppercase leading-none mb-1">Tanggal Pelatihan</label>
-                            <div className="border rounded px-2 py-1 text-[10px] w-32 bg-white text-gray-600 h-7 flex items-center">31/10/24</div>
+                            <input
+                                type="date"
+                                defaultValue="2024-10-31"
+                                className="border rounded px-2 py-1 text-[10px] w-32 bg-white text-gray-600 h-7 focus:outline-none focus:ring-1 focus:ring-blue-500 cursor-pointer font-medium"
+                                onClick={(e) => {
+                                    try {
+                                        if ("showPicker" in HTMLInputElement.prototype) {
+                                            e.currentTarget.showPicker();
+                                        }
+                                    } catch (err) {}
+                                }}
+                            />
                         </div>
                         <Button className="bg-[#1e40af] hover:bg-[#1e3a8a] text-white h-7 text-[10px] px-3 self-end">Apply</Button>
                     </div>

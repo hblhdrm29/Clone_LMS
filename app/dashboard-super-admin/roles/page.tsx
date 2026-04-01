@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Shield, Plus, MoreVertical, Edit, Trash2, Users, Lock, ChevronRight } from "lucide-react"
+import { Shield, Plus, MoreVertical, Edit, Trash2, Users, Lock, ChevronRight, LayoutDashboard, GraduationCap, BookOpen, User, UserPlus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -30,22 +30,28 @@ export default function RoleManagementPage() {
                     </div>
                     <Shield className="absolute -right-4 -bottom-4 h-32 w-32 text-white/10 rotate-12" />
                 </div>
-                <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col justify-between">
-                    <div>
+                <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col justify-between relative overflow-hidden group">
+                    <div className="absolute z-0 -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <Users className="h-32 w-32 text-gray-600 rotate-12" />
+                    </div>
+                    <div className="relative z-10 mb-4">
                         <p className="text-gray-500 font-medium mb-1">Most Assigned Role</p>
                         <h2 className="text-2xl font-bold text-gray-900">Karyawan</h2>
                     </div>
-                    <div className="mt-4 flex items-center gap-2 text-sm text-gray-500">
+                    <div className="relative z-10 mt-auto flex items-center gap-2 text-sm text-gray-500">
                         <Users className="h-4 w-4" />
                         <span>145 Users assigned</span>
                     </div>
                 </div>
-                <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col justify-between">
-                    <div>
+                <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col justify-between relative overflow-hidden group">
+                    <div className="absolute z-0 -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <Lock className="h-32 w-32 text-gray-600 rotate-12" />
+                    </div>
+                    <div className="relative z-10 mb-4">
                         <p className="text-gray-500 font-medium mb-1">System Administrators</p>
                         <h2 className="text-2xl font-bold text-gray-900">7</h2>
                     </div>
-                    <div className="mt-4 flex items-center gap-2 text-sm text-gray-500">
+                    <div className="relative z-10 mt-auto flex items-center gap-2 text-sm text-gray-500">
                         <Lock className="h-4 w-4" />
                         <span>High privilege accounts</span>
                     </div>
@@ -55,18 +61,20 @@ export default function RoleManagementPage() {
             {/* Role Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
-                    { name: "Super Admin", desc: "Full control over the entire system settings, users, and roles.", users: 2, permissions: "All Permissions", color: "bg-indigo-50 text-indigo-600 border-indigo-100" },
-                    { name: "Admin PSP", desc: "Manage learning content, courses, and user progress tracking.", users: 5, permissions: "24 Permissions", color: "bg-blue-50 text-blue-600 border-blue-100" },
-                    { name: "Mentor", desc: "Create courses, grade assignments, and mentor students.", users: 12, permissions: "18 Permissions", color: "bg-orange-50 text-orange-600 border-orange-100" },
-                    { name: "Co-Mentor", desc: "Assist mentors in managing classes and discussions.", users: 8, permissions: "12 Permissions", color: "bg-teal-50 text-teal-600 border-teal-100" },
-                    { name: "Karyawan (Learner)", desc: "Access courses, take quizzes, and track personal progress.", users: 145, permissions: "Read Only", color: "bg-green-50 text-green-600 border-green-100" },
-                    { name: "Onboarding Karyawan", desc: "Limited access for new employees during orientation.", users: 24, permissions: "Limited", color: "bg-gray-50 text-gray-600 border-gray-200" },
-                ].map((role, i) => (
+                    { name: "Super Admin", desc: "Full control over the entire system settings, users, and roles.", users: 2, permissions: "All Permissions", color: "bg-indigo-50 text-indigo-600 border-indigo-100", icon: Shield },
+                    { name: "Admin PSP", desc: "Manage learning content, courses, and user progress tracking.", users: 5, permissions: "24 Permissions", color: "bg-blue-50 text-blue-600 border-blue-100", icon: LayoutDashboard },
+                    { name: "Mentor", desc: "Create courses, grade assignments, and mentor students.", users: 12, permissions: "18 Permissions", color: "bg-orange-50 text-orange-600 border-orange-100", icon: GraduationCap },
+                    { name: "Co-Mentor", desc: "Assist mentors in managing classes and discussions.", users: 8, permissions: "12 Permissions", color: "bg-teal-50 text-teal-600 border-teal-100", icon: BookOpen },
+                    { name: "Karyawan (Learner)", desc: "Access courses, take quizzes, and track personal progress.", users: 145, permissions: "Read Only", color: "bg-green-50 text-green-600 border-green-100", icon: User },
+                    { name: "Onboarding Karyawan", desc: "Limited access for new employees during orientation.", users: 24, permissions: "Limited", color: "bg-gray-50 text-gray-600 border-gray-200", icon: UserPlus },
+                ].map((role, i) => {
+                    const RoleIcon = role.icon;
+                    return (
                     <div key={i} className="group bg-white rounded-xl border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col">
                         <div className="p-6 flex-1">
                             <div className="flex justify-between items-start mb-4">
                                 <div className={cn("h-12 w-12 rounded-xl flex items-center justify-center border", role.color)}>
-                                    <Shield className="h-6 w-6" />
+                                    <RoleIcon className="h-6 w-6" />
                                 </div>
                                 <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                                     <button className="p-2 hover:bg-gray-50 rounded-lg text-gray-400 hover:text-blue-600">
@@ -97,7 +105,8 @@ export default function RoleManagementPage() {
                             </button>
                         </div>
                     </div>
-                ))}
+                );
+                })}
             </div>
         </div>
     )
