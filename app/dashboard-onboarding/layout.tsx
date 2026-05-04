@@ -8,7 +8,6 @@ import {
     LayoutDashboard,
     BookOpen,
     GraduationCap,
-    FileText,
     ClipboardList,
     User,
     LogOut,
@@ -17,9 +16,7 @@ import {
     X,
     Bell,
     Home,
-    Lightbulb,
-    Settings,
-    IdCard
+    Lightbulb
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -243,7 +240,7 @@ function NavItem({
     className,
     disableHover
 }: {
-    icon?: any,
+    icon?: React.ElementType,
     label: string,
     href: string,
     active?: boolean,
@@ -276,7 +273,7 @@ function NavItem({
     )
 }
 
-function NavGroup({ icon: Icon, label, href, matchPath, children }: { icon: any, label: string, href?: string, matchPath?: string, children: React.ReactNode }) {
+function NavGroup({ icon: Icon, label, href, matchPath, children }: { icon: React.ElementType, label: string, href?: string, matchPath?: string, children: React.ReactNode }) {
     const pathname = usePathname()
     const targetPath = matchPath || href
     const isActive = targetPath && (targetPath === "/dashboard-onboarding" ? pathname === "/dashboard-onboarding" : pathname?.startsWith(targetPath))
@@ -299,7 +296,7 @@ function NavGroup({ icon: Icon, label, href, matchPath, children }: { icon: any,
                     <Link
                         href={href}
                         className="flex items-center gap-3 flex-1"
-                        onClick={(e) => {
+                        onClick={() => {
                             if (isActive) setIsOpen(!isOpen)
                         }}
                     >
@@ -313,8 +310,8 @@ function NavGroup({ icon: Icon, label, href, matchPath, children }: { icon: any,
                     </div>
                 )}
 
-                <button onClick={(e) => {
-                    e.stopPropagation()
+                <button onClick={(event) => {
+                    event.stopPropagation()
                     setIsOpen(!isOpen)
                 }} className="p-1 rounded">
                     <ChevronDown className={cn("h-4 w-4 transition-transform", isOpen && "rotate-180")} />

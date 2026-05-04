@@ -3,9 +3,9 @@
 import { StatSection } from "@/components/admin/stat-section";
 import { VisitorStats } from "@/components/admin/visitor-stats";
 import { DepartmentChart } from "@/components/admin/department-chart";
-import { Button } from "@/components/ui/button";
+;
 import { BookOpen, Users, School, Clock, Monitor, FileText } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+;
 
 export default function AdminDashboardPage() {
     // Mock Data

@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { User, Construction } from "lucide-react";
+import {  Construction } from "lucide-react";
 
 export default function AdminProfilePage() {
     return (

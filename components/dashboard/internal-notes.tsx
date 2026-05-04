@@ -26,7 +26,7 @@ export function InternalNotes() {
                 <div className="p-4 bg-yellow-50/30 animate-in slide-in-from-top-1">
                     <div className="space-y-3 mb-4">
                         <div className="bg-white border border-yellow-100 p-3 rounded-md shadow-sm">
-                            <p className="text-xs text-gray-600 italic">"Perlu bimbingan ekstra di assessment 3, konsep dasarnya masih agak kurang kuat."</p>
+                            <p className="text-xs text-gray-600 italic">&quot;Perlu bimbingan ekstra di assessment 3, konsep dasarnya masih agak kurang kuat.&quot;</p>
                             <div className="flex items-center gap-2 mt-2">
                                 <div className="h-4 w-4 rounded-full bg-gray-100 flex items-center justify-center text-[8px] font-bold text-gray-500">CM</div>
                                 <span className="text-[10px] text-gray-400">Co-Mentor • 2 days ago</span>

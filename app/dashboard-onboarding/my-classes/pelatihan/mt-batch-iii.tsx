@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Calendar, ChevronRight, CheckCircle2, PlayCircle, Lock, Download, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useState } from "react"
+import Image from "next/image"
 
 interface StepContent {
     title: string
@@ -215,7 +216,7 @@ export function MtBatchThree() {
                                                     <div className="mt-6 space-y-0 relative animate-in fade-in slide-in-from-top-2 duration-200">
                                                         <div className="absolute left-[5px] top-2 bottom-4 w-px bg-gray-200"></div>
 
-                                                        {step.content.map((item: any, i: number) => (
+                                                        {step.content.map((item: StepContent, i: number) => (
                                                             <div key={i} className="relative pl-6 pb-6 last:pb-0">
                                                                 <div className={cn(
                                                                     "absolute left-0 top-1.5 h-3 w-3 rounded-full border-2 z-10",
@@ -231,7 +232,7 @@ export function MtBatchThree() {
                                                                             <div className="grid grid-cols-2 gap-4 mb-4">
                                                                                 {item.thumbnails.map((thumb: string, idx: number) => (
                                                                                     <div key={idx} className="aspect-video rounded-md overflow-hidden bg-gray-200 relative group cursor-pointer">
-                                                                                        <img src={thumb} alt="" className="w-full h-full object-cover" />
+                                                                                        <Image src={thumb} alt="" width={300} height={168} className="w-full h-full object-cover" />
                                                                                         <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
                                                                                     </div>
                                                                                 ))}
@@ -296,7 +297,7 @@ export function MtBatchThree() {
                             <h3 className="font-bold text-gray-900 mb-4 text-sm">Instructor</h3>
                             <div className="flex items-center gap-3">
                                 <div className="h-10 w-10 rounded-full bg-gray-200 overflow-hidden">
-                                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="Instructor" className="h-full w-full object-cover" />
+                                    <Image src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="Instructor" width={40} height={40} className="h-full w-full object-cover" />
                                 </div>
                                 <div>
                                     <p className="font-bold text-sm text-gray-900">Dr. Sarah Wijaya</p>
@@ -317,7 +318,7 @@ export function MtBatchThree() {
                             <div className="flex items-center -space-x-2 mb-4">
                                 {[1, 2, 3, 4].map((i) => (
                                     <div key={i} className="h-8 w-8 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
-                                        <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i}`} alt="" className="h-full w-full object-cover" />
+                                        <Image src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i}`} alt="" width={32} height={32} className="h-full w-full object-cover" />
                                     </div>
                                 ))}
                                 <div className="h-8 w-8 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center text-[10px] font-bold text-gray-500">

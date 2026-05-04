@@ -10,7 +10,6 @@ import {
     Shield,
     FileText,
     LogOut,
-    ChevronDown,
     X
 } from "lucide-react"
 import { cn } from "@/lib/utils"

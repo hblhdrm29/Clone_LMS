@@ -1,11 +1,11 @@
 "use client"
 
 import { Suspense } from "react"
-import { useSearchParams } from "next/navigation"
+
 import { HighTeamPerformance } from "./high-team-performance"
 
 function CourseProgressContent() {
-    const searchParams = useSearchParams()
+
 
     // Future implementation:
     // const courseId = searchParams.get("course")

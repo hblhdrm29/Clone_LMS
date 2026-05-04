@@ -1,9 +1,9 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Calendar, ChevronRight, User, Users, BookOpen, Clock, AlertTriangle, CheckCircle2, ChevronDown, UserSquare2, XCircle } from "lucide-react"
+import { ChevronRight, User, Users, BookOpen, Clock, AlertTriangle, CheckCircle2, ChevronDown, XCircle } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useState } from "react"
 import * as React from "react"
@@ -21,7 +21,7 @@ function StatCard({
 }: {
     title: string,
     value: string | number,
-    icon: any,
+    icon: React.ElementType,
     className?: string,
     iconClassName?: string,
     titleClassName?: string,

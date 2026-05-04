@@ -10,9 +10,7 @@ interface SimpleDonutChartProps {
 }
 
 export function SimpleDonutChart({ title, percentage, color, label }: SimpleDonutChartProps) {
-    const radius = 35;
-    const circumference = 2 * Math.PI * radius;
-    const offset = circumference - (percentage / 100) * circumference;
+
 
     return (
         <Card className="bg-white border border-blue-500 shadow-sm h-full rounded-3xl">

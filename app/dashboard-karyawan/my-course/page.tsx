@@ -2,9 +2,10 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Search, CheckCircle2, FileText, XCircle, Trophy, Calendar, FileCheck, Circle } from "lucide-react"
+import { Search, CheckCircle2, FileText, XCircle, Trophy, Calendar, FileCheck } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import Image from "next/image"
 
 // Types
 type CourseStatus = "passed" | "on-progress" | "unpassed"
@@ -123,7 +124,7 @@ function StatusSection({
 }: {
     title: string
     count: number
-    icon: any
+    icon: React.ElementType
     colorTheme: "green" | "orange" | "red"
     children: React.ReactNode
 }) {
@@ -174,9 +175,11 @@ function CourseListCard({ course }: { course: Course }) {
     return (
         <Card className="overflow-hidden border-none shadow-sm hover:shadow-md transition-shadow bg-white flex flex-col h-full">
             <div className="relative h-40 bg-gray-100 overflow-hidden">
-                <img
+                <Image
                     src={course.image}
                     alt={course.title}
+                    width={500}
+                    height={300}
                     className="h-full w-full object-cover"
                 />
                 <div className={cn("absolute top-3 left-3 text-[10px] font-bold text-white px-2 py-0.5 rounded-sm uppercase tracking-wider", badgeColor)}>

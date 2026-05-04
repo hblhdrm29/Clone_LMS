@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Search, CheckCircle, Clock, FileText, XCircle, ChevronRight } from "lucide-react"
 import { CourseCard } from "@/components/dashboard/course-card"
 import Link from "next/link"
-import { cn } from "@/lib/utils"
+
 
 export default function MyClassesPage() {
     const passedRef = useRef<HTMLDivElement>(null)

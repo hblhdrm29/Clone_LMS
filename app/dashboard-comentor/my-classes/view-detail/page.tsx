@@ -3,14 +3,14 @@
 import React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { useParams } from "next/navigation"
+
 import {
     ChevronLeft,
     Users,
     Calendar,
-    Clock,
-    MapPin,
-    FileText,
+    
+    
+    
     MoreHorizontal,
     Search,
     Filter
@@ -25,8 +25,8 @@ import { ClipboardList, ArrowRight } from "lucide-react"
 import cover1 from "../../../../public/assets/p1_wide.png"
 
 export default function ClassDetailPage() {
-    const params = useParams()
-    const id = params.id
+    
+    // const id = params.id
 
     // Mock Data based on ID (In a real app, fetch this)
     const classData = {

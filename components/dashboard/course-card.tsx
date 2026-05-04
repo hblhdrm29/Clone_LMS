@@ -3,7 +3,8 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
-import { FileText, Calendar, Trophy, Users, Share2, MessageSquare, Lightbulb } from "lucide-react"
+import Image from "next/image"
+import { FileText, Calendar, Trophy, Users } from "lucide-react"
 
 interface CourseCardProps {
     image?: string
@@ -15,7 +16,7 @@ interface CourseCardProps {
     status: "Passed" | "OnProgress" | "Unpassed"
     progress: number
     participants?: string
-    icon?: any
+    icon?: React.ElementType
     footerLabel?: string
     footerValue?: string
 }
@@ -41,7 +42,7 @@ export function CourseCard({
             <div className="relative h-48 bg-gray-100 flex items-center justify-center shrink-0">
                 {/* Placeholder for actual image or dynamic generation if needed */}
                 {image ? (
-                    <img src={image} alt={title} className="h-full w-full object-cover" />
+                    <Image src={image} alt={title} width={400} height={200} className="h-full w-full object-cover" />
                 ) : (
                     <div className="text-center p-8">
                         <h3 className="text-xl font-serif text-gray-400 tracking-widest">CASSS</h3>

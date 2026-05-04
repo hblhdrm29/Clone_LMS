@@ -2,7 +2,7 @@
 
 import { Bell, X } from "lucide-react"
 import { useState } from "react"
-import { cn } from "@/lib/utils"
+
 
 export function SystemAlert() {
     const [isVisible, setIsVisible] = useState(true)
@@ -18,7 +18,7 @@ export function SystemAlert() {
                 <div>
                     <h3 className="text-[#FF453A] font-bold text-sm leading-tight">System Alert !</h3>
                     <p className="text-gray-500 font-medium text-xs leading-tight">
-                        New message: <span className="text-gray-500">"Belum Mengisi Evaluasi 1"</span>
+                        New message: <span className="text-gray-500">&quot;Belum Mengisi Evaluasi 1&quot;</span>
                     </p>
                 </div>
             </div>

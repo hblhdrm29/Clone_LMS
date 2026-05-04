@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Card } from "@/components/ui/card"
+
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
@@ -11,8 +11,6 @@ import {
     Calendar,
     Building2,
     User,
-    Star,
-    CheckCircle2,
     Send,
     FileText
 } from "lucide-react"
@@ -177,7 +175,7 @@ function EvaluationSection({
 }: {
     id: string,
     title: string,
-    icon: any,
+    icon: React.ElementType,
     isOpen: boolean,
     onToggle: () => void,
     questions: string[],

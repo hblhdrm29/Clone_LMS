@@ -1,10 +1,10 @@
 "use client"
 
 import * as React from "react"
-import { ChevronDown, PlayCircle, FileText, CheckCircle2, ChevronRight, ArrowLeft } from "lucide-react"
+import { ChevronDown, PlayCircle, FileText, CheckCircle2, ArrowLeft } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
-import { Badge } from "@/components/ui/badge"
+
 import { useSearchParams, useRouter, usePathname } from "next/navigation"
 
 // Mock data matching the High Team Performance content
@@ -66,7 +66,7 @@ export function CourseSidebar() {
     // For now, let's keep the expanded logic for non-announcement items.
     const [expandedSections, setExpandedSections] = React.useState<string[]>([])
 
-    const toggleSection = (id: string, hasItems: boolean) => {
+    const toggleSection = (id: string) => {
         const isActive = activeSectionId === id
 
         if (isActive) {
@@ -129,7 +129,7 @@ export function CourseSidebar() {
                                     "flex items-center py-3 px-2 cursor-pointer rounded-md group transition-colors",
                                     isActive ? "bg-blue-50" : "hover:bg-gray-50"
                                 )}
-                                onClick={() => toggleSection(section.id, !!section.items?.length)}
+                                onClick={() => toggleSection(section.id)}
                             >
                                 {/* Only show chevron if NOT announcement and has items */}
                                 {!isAnnouncement && (

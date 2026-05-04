@@ -4,85 +4,12 @@ import { StatsCards } from "@/components/dashboard/stats-cards"
 import { TopPerformers } from "@/components/dashboard/top-performers"
 import { CourseStats } from "@/components/dashboard/course-stats"
 import { SystemAlert } from "@/components/dashboard/system-alert"
-import { Briefcase, CheckCircle, Clock, XCircle, Award, Trophy, ScrollText, CalendarRange, Bell } from "lucide-react"
+import { Briefcase,   Award, Trophy, ScrollText, CalendarRange, Bell } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
 
 
-function KaryawanStats() {
-    return (
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {/* Card 1: Class */}
-            <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-50 flex flex-col justify-between">
-                <div className="flex justify-between items-start mb-2">
-                    <div className="bg-indigo-50 p-2 rounded-lg">
-                        <Briefcase className="h-5 w-5 text-indigo-600" />
-                    </div>
-                </div>
-                <div>
-                    <h3 className="text-2xl font-bold text-gray-900">1</h3>
-                    <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Class</p>
-                </div>
-            </div>
 
-            {/* Card 2: Completed */}
-            <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-50 flex flex-col justify-between">
-                <div className="flex justify-between items-start mb-2">
-                    <div className="bg-emerald-50 p-2 rounded-lg">
-                        <CheckCircle className="h-5 w-5 text-emerald-500" />
-                    </div>
-                </div>
-                <div>
-                    <h3 className="text-2xl font-bold text-gray-900">1</h3>
-                    <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Completed</p>
-                </div>
-            </div>
-
-            {/* Card 3: On Progress */}
-            <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-50 flex flex-col justify-between">
-                <div className="flex justify-between items-start mb-2">
-                    <div className="bg-amber-50 p-2 rounded-lg">
-                        <div className="h-5 w-5 flex items-center justify-center gap-0.5">
-                            <div className="w-1 h-1 bg-amber-500 rounded-full"></div>
-                            <div className="w-1 h-1 bg-amber-500 rounded-full"></div>
-                            <div className="w-1 h-1 bg-amber-500 rounded-full"></div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h3 className="text-2xl font-bold text-gray-900">0</h3>
-                    <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">On Progress</p>
-                </div>
-            </div>
-
-            {/* Card 4: Unpassed */}
-            <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-50 flex flex-col justify-between">
-                <div className="flex justify-between items-start mb-2">
-                    <div className="bg-red-50 p-2 rounded-lg">
-                        <XCircle className="h-5 w-5 text-red-500" />
-                    </div>
-                </div>
-                <div>
-                    <h3 className="text-2xl font-bold text-gray-900">0</h3>
-                    <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Unpassed</p>
-                </div>
-            </div>
-
-            {/* Card 5: Passed */}
-            <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-50 flex flex-col justify-between">
-                <div className="flex justify-between items-start mb-2">
-                    <div className="bg-cyan-50 p-2 rounded-lg">
-                        <Trophy className="h-5 w-5 text-cyan-500" />
-                    </div>
-                </div>
-                <div>
-                    <h3 className="text-2xl font-bold text-gray-900">1</h3>
-                    <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Passed</p>
-                </div>
-            </div>
-        </div>
-    )
-}
 
 export default function DashboardPage() {
     return (

@@ -4,6 +4,7 @@ import { useState } from "react"
 
 import { Card, CardContent } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 import { Medal } from "lucide-react"
 
 export function TopPerformers() {
@@ -41,9 +42,11 @@ export function TopPerformers() {
                                 {/* Avatar with Rank Badge */}
                                 <div className="relative">
                                     <div className={cn("h-8 w-8 rounded-full flex items-center justify-center text-white font-bold text-[10px] shadow-sm ring-1 ring-white overflow-hidden", p.avatarColor)}>
-                                        <img
+                                        <Image
                                             src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${p.name}`}
                                             alt={p.name}
+                                            width={32}
+                                            height={32}
                                             className="h-full w-full object-cover"
                                         />
                                     </div>

@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+
 import { Briefcase, User } from "lucide-react"
 
 // Specific notifications for Mentor and Co-Mentor (Onboarding & Admin PSP)

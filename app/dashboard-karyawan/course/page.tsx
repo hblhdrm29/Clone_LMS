@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Search, Star, AlertCircle, Briefcase, Calendar, Layers, ChevronLeft, ChevronRight, SlidersHorizontal } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 // Types
 interface Course {
@@ -19,7 +20,7 @@ interface Course {
 
 interface Section {
     title: string
-    icon: any
+    icon: React.ElementType
     iconColor: string
     courses: Course[]
 }
@@ -120,9 +121,11 @@ function CatalogCourseCard({ course }: { course: Course }) {
     return (
         <Card className="overflow-hidden border-none shadow-sm hover:shadow-md transition-shadow group cursor-pointer bg-white h-full flex flex-col">
             <div className="relative h-48 bg-gray-100 overflow-hidden">
-                <img
+                <Image
                     src={course.image}
                     alt={course.title}
+                    width={500}
+                    height={300}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {course.badge && (

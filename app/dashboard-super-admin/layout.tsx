@@ -7,16 +7,13 @@ import { usePathname } from "next/navigation"
 import {
     LayoutDashboard,
     Shield,
-    FileText,
     User,
-    LogOut,
     ChevronDown,
     Menu,
     X,
     Bell,
     Home,
     Lightbulb,
-    Settings,
     RefreshCw,
     GraduationCap,
     Users
@@ -31,7 +28,7 @@ export default function SuperAdminLayout({ children }: { children: React.ReactNo
     const [isSidebarOpen, setIsSidebarOpen] = React.useState(false)
     const [showNotifications, setShowNotifications] = React.useState(false)
     const [showRole, setShowRole] = React.useState(false)
-    const pathname = usePathname()
+
 
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -267,7 +264,7 @@ function NavItem({
     small,
     className
 }: {
-    icon?: any,
+    icon?: React.ElementType,
     label: string,
     href: string,
     active?: boolean,

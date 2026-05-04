@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+
 import { User, Users, GraduationCap, Briefcase } from "lucide-react"
 
 const notifications = [

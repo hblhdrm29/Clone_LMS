@@ -10,18 +10,14 @@ import {
     Users,
     Shield,
     User,
-    LogOut,
     Menu,
     X,
     Bell,
     Home,
     Lightbulb,
-    HelpCircle,
     GraduationCap,
-    IdCard,
     ChevronDown,
-    RefreshCw,
-    ClipboardList
+    RefreshCw
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -258,7 +254,7 @@ function NavItem({
     className,
     disableHover
 }: {
-    icon?: any,
+    icon?: React.ElementType,
     label: string,
     href: string,
     active?: boolean,
@@ -289,51 +285,4 @@ function NavItem({
     )
 }
 
-function NavGroup({ icon: Icon, label, href, matchPath, children }: { icon: any, label: string, href?: string, matchPath?: string, children: React.ReactNode }) {
-    const pathname = usePathname()
-    const targetPath = matchPath || href
-    const isActive = targetPath && (targetPath === "/dashboard-comentor" ? pathname === "/dashboard-comentor" : pathname?.startsWith(targetPath))
 
-    const [isOpen, setIsOpen] = React.useState(!!isActive)
-
-    React.useEffect(() => {
-        if (isActive) setIsOpen(true)
-    }, [isActive])
-
-    return (
-        <div>
-            <div className={cn(
-                "w-full flex items-center justify-between px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer",
-                isActive && "bg-blue-50 text-blue-600 font-medium hover:bg-blue-100"
-            )}
-                onClick={() => !href && setIsOpen(!isOpen)}
-            >
-                {href ? (
-                    <Link
-                        href={href}
-                        className="flex items-center gap-3 flex-1"
-                        onClick={(e) => {
-                            if (isActive) setIsOpen(!isOpen)
-                        }}
-                    >
-                        <Icon className={cn("h-5 w-5", isActive && "text-blue-600")} />
-                        <span className="text-sm">{label}</span>
-                    </Link>
-                ) : (
-                    <div className="flex items-center gap-3 flex-1">
-                        <Icon className={cn("h-5 w-5", isActive && "text-blue-600")} />
-                        <span className="text-sm">{label}</span>
-                    </div>
-                )}
-
-                <button onClick={(e) => {
-                    e.stopPropagation()
-                    setIsOpen(!isOpen)
-                }} className="p-1 rounded">
-                    <ChevronDown className={cn("h-4 w-4 transition-transform", isOpen && "rotate-180")} />
-                </button>
-            </div>
-            {isOpen && children}
-        </div>
-    )
-}

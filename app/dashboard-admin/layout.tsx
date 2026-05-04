@@ -4,7 +4,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, Bell, ChevronDown, User, LogOut, Home, LayoutDashboard, Lightbulb, RefreshCw, GraduationCap, Shield } from "lucide-react";
+import { Menu, Bell, ChevronDown, User, Home, LayoutDashboard, Lightbulb, RefreshCw, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
 import logoBumn from "../../public/assets/Logo_BUMN.png";
 import logoPeruri from "../../public/assets/Logo_Peruri.png";

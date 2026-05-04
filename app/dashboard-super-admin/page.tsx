@@ -3,7 +3,15 @@
 import { useState } from "react"
 import { Users, Shield, Activity, Search } from "lucide-react"
 
-function StatCard({ title, value, label, icon: Icon, color }: any) {
+interface StatCardProps {
+    title: string
+    value: string | number
+    label: string
+    icon: React.ElementType
+    color: string
+}
+
+function StatCard({ title, value, label, icon: Icon, color }: StatCardProps) {
     return (
         <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm relative overflow-hidden group">
             <div className={`absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity ${color}`}>

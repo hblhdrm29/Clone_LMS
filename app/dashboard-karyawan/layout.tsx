@@ -9,20 +9,13 @@ import {
     BookOpen,
     GraduationCap,
     Shield,
-    FileText,
-    ClipboardList,
     User,
-    LogOut,
     ChevronDown,
     Menu,
     X,
     Bell,
     Home,
     Lightbulb,
-    Settings,
-    Award,
-    Briefcase,
-    IdCard,
     RefreshCw
 } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -303,7 +296,7 @@ function NavItem({
     className,
     disableHover
 }: {
-    icon?: any,
+    icon?: React.ElementType,
     label: string,
     href: string,
     active?: boolean,
@@ -336,7 +329,7 @@ function NavItem({
     )
 }
 
-function NavGroup({ icon: Icon, label, href, matchPath, children }: { icon: any, label: string, href?: string, matchPath?: string, children: React.ReactNode }) {
+function NavGroup({ icon: Icon, label, href, matchPath, children }: { icon: React.ElementType, label: string, href?: string, matchPath?: string, children: React.ReactNode }) {
     const pathname = usePathname()
     const targetPath = matchPath || href
     const isActive = targetPath && (targetPath === "/dashboard-karyawan" ? pathname === "/dashboard-karyawan" : pathname?.startsWith(targetPath))
@@ -359,7 +352,7 @@ function NavGroup({ icon: Icon, label, href, matchPath, children }: { icon: any,
                     <Link
                         href={href}
                         className="flex items-center gap-3 flex-1"
-                        onClick={(e) => {
+                        onClick={() => {
                             // If it's a link, we let it navigate, but also toggle if needed?
                             // Usually links shouldn't function as toggles if they navigate away.
                             // But keeping existing logic just in case.

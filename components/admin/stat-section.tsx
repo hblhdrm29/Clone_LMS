@@ -2,12 +2,12 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { User, Trophy, Medal, Download } from "lucide-react";
+import { Trophy } from "lucide-react";
 
 interface StatItem {
     label: string;
     value: string | number;
-    icon: any;
+    icon: React.ElementType;
     color?: string; // e.g. "text-blue-600", "bg-blue-100"
 }
 

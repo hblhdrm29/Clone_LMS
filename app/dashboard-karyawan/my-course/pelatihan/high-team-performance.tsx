@@ -3,7 +3,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Calendar, ChevronRight, ChevronDown, CheckCircle2, Megaphone, FileText, PlayCircle, Lock, Map, Play, Pencil, Trash2 } from "lucide-react"
+import { Calendar, ChevronRight, CheckCircle2, Megaphone, FileText, PlayCircle, Map, Play, Pencil, Trash2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useState } from "react"
 import Link from "next/link"
@@ -27,7 +27,7 @@ interface Section {
 
 export function HighTeamPerformance() {
     // State to track expanded sections
-    const [expandedSections, setExpandedSections] = useState<string[]>(["announcement", "pretest", "materi", "tugas", "posttest", "kuesioner"])
+    const [, setExpandedSections] = useState<string[]>(["announcement", "pretest", "materi", "tugas", "posttest", "kuesioner"])
 
     // State to track expanded items (sub-accordion)
     const [expandedItems, setExpandedItems] = useState<string[]>(["video1", "tugas1"])
@@ -311,10 +311,10 @@ export function HighTeamPerformance() {
 
                                                     {section.items && (
                                                         <div className="space-y-2">
-                                                            {section.items.map((item, idx) => {
+                                                            {section.items.map((item) => {
                                                                 const isItemExpanded = expandedItems.includes(item.id);
                                                                 // Use div if content exists so we can toggle, otherwise just a div
-                                                                const ItemWrapper = item.content ? 'div' : 'div';
+
 
                                                                 return (
                                                                     <div key={item.id} className="">

@@ -11,12 +11,10 @@ import {
     BarChart2,
     ClipboardList,
     User,
-    Menu,
     X
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import React from "react";
-import Image from "next/image";
 
 export function AdminSidebar({
     isOpen,
@@ -25,7 +23,7 @@ export function AdminSidebar({
     isOpen?: boolean,
     onClose?: () => void
 }) {
-    const pathname = usePathname();
+    // const pathname = usePathname();
 
     return (
         <aside className={cn(
@@ -62,7 +60,7 @@ function NavItem({
     label,
     href
 }: {
-    icon: any,
+    icon: React.ElementType,
     label: string,
     href: string
 }) {

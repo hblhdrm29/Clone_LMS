@@ -4,8 +4,6 @@ import * as React from "react"
 import {
     Search,
     Plus,
-    Filter,
-    MoreVertical,
     Download,
     Trash2,
     Edit,
@@ -203,7 +201,7 @@ export default function UserManagementPage() {
     )
 }
 
-function UsersIcon(props: any) {
+function UsersIcon(props: React.SVGProps<SVGSVGElement>) {
     return (
         <svg
             {...props}

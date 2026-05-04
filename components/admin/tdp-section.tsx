@@ -3,9 +3,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import React from "react";
-import { Users, School, Download } from "lucide-react";
+import { Users, School } from "lucide-react";
 
-const IconMap: Record<string, any> = {
+const IconMap: Record<string, React.ElementType> = {
     School: School,
     Users: Users
 };

@@ -3,10 +3,9 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
 import { Search, Calendar, ChevronLeft, ChevronRight, ArrowRight, Tags } from "lucide-react"
-import { cn } from "@/lib/utils"
 import Link from "next/link"
+import Image from "next/image"
 
 // Mock Data for Catalog
 const SECTIONS = [
@@ -76,13 +75,15 @@ const SECTIONS = [
     }
 ]
 
-function CatalogCard({ course }: { course: any }) {
+function CatalogCard({ course }: { course: { image: string, title: string, category: string, date: string } }) {
     return (
         <Card className="overflow-hidden border-none shadow-sm hover:shadow-md transition-shadow group cursor-pointer bg-white">
             <div className="relative h-48 bg-gray-100 overflow-hidden">
-                <img
+                <Image
                     src={course.image}
                     alt={course.title}
+                    width={500}
+                    height={300}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
             </div>

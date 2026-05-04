@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, Calendar, Settings, Download, Plus, ChevronLeft, ChevronRight } from "lucide-react";
+import { Search, Calendar, Settings, Plus, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Mock Data
@@ -21,14 +21,14 @@ const coursesData = [
 export default function CoursesPage() {
     const [searchTerm, setSearchTerm] = React.useState("");
     const [currentPage, setCurrentPage] = React.useState(1);
-    const entriesPerPage = 20;
+    // const entriesPerPage = 20;
 
     const filteredData = coursesData.filter(course =>
         course.kategori.toLowerCase().includes(searchTerm.toLowerCase()) ||
         course.fullname.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    const totalPages = Math.ceil(filteredData.length / entriesPerPage);
+
 
     return (
         <div className="p-6 space-y-6">

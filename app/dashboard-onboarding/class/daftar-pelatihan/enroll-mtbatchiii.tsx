@@ -3,10 +3,11 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Calendar, ChevronRight, CheckCircle2, PlayCircle, Lock, Download, ChevronDown, ArrowRight } from "lucide-react"
+import { Calendar, ChevronRight, CheckCircle2, PlayCircle, Lock, ChevronDown, ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 interface StepContent {
     title: string
@@ -176,7 +177,13 @@ export function EnrollMtBatchIII() {
                             <h3 className="font-bold text-gray-900 mb-4 text-sm">Instructor</h3>
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="h-10 w-10 rounded-full bg-gray-200 overflow-hidden">
-                                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="Instructor" className="h-full w-full object-cover" />
+                                    <Image
+                                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
+                                        alt="Instructor"
+                                        width={40}
+                                        height={40}
+                                        className="h-full w-full object-cover"
+                                    />
                                 </div>
                                 <div>
                                     <p className="font-bold text-sm text-gray-900">Dr. Sarah Wijaya</p>
@@ -207,7 +214,13 @@ export function EnrollMtBatchIII() {
                             <div className="flex items-center -space-x-2 mb-4">
                                 {[1, 2, 3, 4].map((i) => (
                                     <div key={i} className="h-8 w-8 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
-                                        <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i}`} alt="" className="h-full w-full object-cover" />
+                                        <Image
+                                            src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i}`}
+                                            alt=""
+                                            width={32}
+                                            height={32}
+                                            className="h-full w-full object-cover"
+                                        />
                                     </div>
                                 ))}
                                 <div className="h-8 w-8 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center text-[10px] font-bold text-gray-500">

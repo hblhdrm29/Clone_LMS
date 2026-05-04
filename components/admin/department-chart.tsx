@@ -44,7 +44,7 @@ export function DepartmentChart() {
                                         if ("showPicker" in HTMLInputElement.prototype) {
                                             e.currentTarget.showPicker();
                                         }
-                                    } catch (err) {}
+                                    } catch {}
                                 }}
                             />
                         </div>
